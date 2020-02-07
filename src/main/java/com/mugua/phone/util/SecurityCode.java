@@ -1,4 +1,4 @@
-package com.chenghe.parttime.util;
+package com.mugua.phone.util;
 
 import java.util.Arrays;
 

@@ -1,15 +1,15 @@
-package com.chenghe.parttime.user.controller;
+package com.mugua.phone.user.controller;
 
 /**
  * Created by lenovo on 2019/7/23.
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.chenghe.parttime.pojo.User;
-import com.chenghe.parttime.service.IIdfaService;
-import com.chenghe.parttime.service.IUserService;
-import com.chenghe.parttime.util.LruCache;
-import com.chenghe.parttime.util.SecurityCode;
+import com.mugua.phone.pojo.User;
+import com.mugua.phone.service.IIdfaService;
+import com.mugua.phone.service.IUserService;
+import com.mugua.phone.util.LruCache;
+import com.mugua.phone.util.SecurityCode;
 import com.youguu.core.util.PropertiesUtil;
 import io.swagger.annotations.*;
 import org.springframework.stereotype.Controller;

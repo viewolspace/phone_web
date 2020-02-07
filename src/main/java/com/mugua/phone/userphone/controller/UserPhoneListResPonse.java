@@ -1,15 +1,16 @@
-package com.chenghe.parttime.phone.controller;
+package com.mugua.phone.userphone.controller;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by lenovo on 2019/7/22.
  */
 @ApiModel
-public class UserPhoneResPonse {
+public class UserPhoneListResPonse {
     @ApiModelProperty("status")
     private String status;
 
@@ -19,7 +20,7 @@ public class UserPhoneResPonse {
 
 
     @ApiModelProperty("result")
-    private UserPhoneVo result;
+    private List<UserPhoneVo> result;
 
     public String getStatus() {
         return status;
@@ -39,11 +40,11 @@ public class UserPhoneResPonse {
 
 
 
-    public UserPhoneVo getResult() {
+    public List<UserPhoneVo> getResult() {
         return result;
     }
 
-    public void setResult(UserPhoneVo result) {
+    public void setResult(List<UserPhoneVo> result) {
         this.result = result;
     }
 

@@ -1,4 +1,4 @@
-package com.chenghe.parttime.tool.controller;
+package com.mugua.phone.tool.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

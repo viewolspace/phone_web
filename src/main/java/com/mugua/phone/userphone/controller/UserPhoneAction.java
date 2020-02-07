@@ -1,19 +1,32 @@
-package com.chenghe.parttime.phone.controller;
+package com.mugua.phone.userphone.controller;
 
 /**
  * Created by lenovo on 2019/7/23.
  */
 
 import com.alibaba.fastjson.JSONObject;
-import com.chenghe.parttime.pojo.User;
-import com.chenghe.parttime.pojo.UserPhone;
-import com.chenghe.parttime.service.IUserPhoneService;
-import com.chenghe.parttime.service.IUserService;
-import io.swagger.annotations.*;
+import com.mugua.phone.pojo.User;
+import com.mugua.phone.pojo.UserPhone;
+import com.mugua.phone.service.IUserPhoneService;
+import com.mugua.phone.service.IUserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
 import org.springframework.stereotype.Controller;
 
 import javax.annotation.Resource;
-import javax.ws.rs.*;
+import javax.ws.rs.DefaultValue;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,7 +98,7 @@ public class UserPhoneAction {
 
         try {
             UserPhone userPhone = userPhoneService.getUserPhone(userId);
-            if(userPhone!=null){
+            if (userPhone != null) {
                 UserPhoneResPonse.UserPhoneVo userPhoneVo = new UserPhoneResPonse.UserPhoneVo();
                 userPhoneVo.setContent(userPhone.getContent());
                 userPhoneVo.setUserId(userPhone.getUserId());
@@ -121,10 +134,10 @@ public class UserPhoneAction {
         UserPhoneListResPonse resPonse = new UserPhoneListResPonse();
 
         try {
-            List<UserPhone> userPhones = userPhoneService.listUserPhone(userId,maxId,pageSize);
-            if(userPhones!=null){
+            List<UserPhone> userPhones = userPhoneService.listUserPhone(userId, maxId, pageSize);
+            if (userPhones != null) {
                 List<UserPhoneListResPonse.UserPhoneVo> UserPhoneVos = new ArrayList<UserPhoneListResPonse.UserPhoneVo>();
-                for(UserPhone userPhone:userPhones){
+                for (UserPhone userPhone : userPhones) {
                     UserPhoneListResPonse.UserPhoneVo userPhoneVo = new UserPhoneListResPonse.UserPhoneVo();
                     userPhoneVo.setContent(userPhone.getContent());
                     userPhoneVo.setUserId(userPhone.getUserId());

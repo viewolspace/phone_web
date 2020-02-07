@@ -1,4 +1,4 @@
-package com.chenghe.parttime.user.controller;
+package com.mugua.phone.user.controller;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
