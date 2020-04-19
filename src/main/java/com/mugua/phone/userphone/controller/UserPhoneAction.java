@@ -71,7 +71,7 @@ public class UserPhoneAction {
 
         UserPhone userPhone = new UserPhone();
         userPhone.setUserId(userId);
-        userPhone.setNum();
+        userPhone.setNum(100);
         userPhone.setContent(address);
         userPhoneService.addUserPhone(userPhone);
 

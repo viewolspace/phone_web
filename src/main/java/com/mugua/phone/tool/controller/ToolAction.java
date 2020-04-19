@@ -35,7 +35,7 @@ public class ToolAction {
 
     })
     public String phoneSelect(@ApiParam(value = "手机号码") @QueryParam("phone") String phone){
-        String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=" + phone;
+        String url = "http://api.k780.com:88/?app=phone.get&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&phone=" + phone;
         Response<String> msg = HttpUtil.sendGet(url, null, "UTF-8");
         JSONObject json = new JSONObject();
         json.put("status","0000");
