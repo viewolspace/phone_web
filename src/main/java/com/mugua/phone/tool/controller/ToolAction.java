@@ -35,7 +35,7 @@ public class ToolAction {
 
     })
     public String phoneSelect(@ApiParam(value = "手机号码") @QueryParam("phone") String phone){
-        String url = "http://mobsec-dianhua.baidu.com/dianhua_api/open/location?tel=" + phone;
+        String url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=" + phone;
         Response<String> msg = HttpUtil.sendGet(url, null, "UTF-8");
         JSONObject json = new JSONObject();
         json.put("status","0000");
@@ -44,9 +44,9 @@ public class ToolAction {
             if(msg!=null && msg.getT()!=null){
                 String res = msg.getT();
                 JSONObject jsRes = JSON.parseObject(res);
-                JSONObject phoneMess = jsRes.getJSONObject("response").getJSONObject(phone);
+                JSONObject phoneMess = jsRes.getJSONObject("result");
                 if(phoneMess!=null){
-                    json.put("message",phoneMess.getString("location"));
+                    json.put("message",phoneMess.getString("att"));
                 }
             }
         }catch (Exception e){
