@@ -8,6 +8,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.mugua.phone.pojo.User;
 import com.mugua.phone.service.IIdfaService;
 import com.mugua.phone.service.IUserService;
+import com.mugua.phone.sms.ISmsService;
+import com.mugua.phone.sms.YtxSmsServiceImpl;
 import com.mugua.phone.util.LruCache;
 import com.mugua.phone.util.SecurityCode;
 import com.youguu.core.util.PropertiesUtil;
@@ -101,13 +103,13 @@ public class UserAction {
 
         tokenCache.remove(phone);
 
-
-
-
         String random = SecurityCode.getSimpleSecurityCode();
 
+        ISmsService smsService = new YtxSmsServiceImpl(app);
+        smsService.sendRand(phone,random);
+
         //测试阶段验证码 8888
-        random = "888888";
+//        random = "888888";
 
         json.put("status", "0000");
 
